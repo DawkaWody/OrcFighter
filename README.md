@@ -1,1 +1,1 @@
-# Przygody-Jacka-Owoca
+# Przygody Jacka Owoca
