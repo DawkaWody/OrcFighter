@@ -234,9 +234,9 @@ GameObject:
   - component: {fileID: 860942700}
   - component: {fileID: 860942701}
   - component: {fileID: 860942702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: kwadrat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 1059034307}
   - component: {fileID: 1059034309}
   - component: {fileID: 1059034308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TilemapObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 1342402513}
   - component: {fileID: 1342402515}
   - component: {fileID: 1342402514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TilemapGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42020,7 +42020,7 @@ GameObject:
   - component: {fileID: 1417373358}
   - component: {fileID: 1417373360}
   - component: {fileID: 1417373359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TilemapWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
