@@ -53,3 +53,6 @@ TagManager:
   - name: Trees
     uniqueID: 987800287
     locked: 0
+  - name: Portals
+    uniqueID: 3773796431
+    locked: 0
