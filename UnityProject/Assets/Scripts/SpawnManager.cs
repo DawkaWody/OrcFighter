@@ -31,6 +31,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator ZombieSpawnCo(){
         while (spawn){
             yield return new WaitForSeconds(_spawnRate);
+            int wave = GameManager.instance.wave;
             Instantiate(_orcPrefab, transform.position + new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0), transform.rotation);
         }
     }

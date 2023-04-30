@@ -8,19 +8,21 @@ public class GameManager : MonoBehaviour
 
 
     public int coins;
+    public int wave;
+    public int zombiesKilled;
 
     private void Awake() {
         if (instance != null){
             Destroy(gameObject);
             return;
         }
-        
+
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
     // Start is called before the first frame update
     void Start(){
-        
+        wave = 1;
     }
 
     // Update is called once per frame
