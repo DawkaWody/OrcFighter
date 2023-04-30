@@ -18,4 +18,11 @@ public class Player : MonoBehaviour
     void Update(){
         _rigidbody.velocity = new Vector2(_speed * Input.GetAxis("Horizontal"), _speed * Input.GetAxis("Vertical"));
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Coin")){
+            Destroy(other.gameObject);
+            GameManager.instance.coins += 1;
+        }
+    }
 }
