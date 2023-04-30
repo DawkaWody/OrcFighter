@@ -8,6 +8,9 @@ public class Portal : MonoBehaviour
     [SerializeField]
     private Animator _animator;
     [SerializeField]
+    private AudioSource _audioSource;
+
+    [SerializeField]
     private float _portalEnterDuration;
     [SerializeField]
     private string _sceneToLoad;
@@ -24,6 +27,7 @@ public class Portal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")){
             _animator.SetTrigger("portalEnter");
+            _audioSource.Play();
             StartCoroutine(PortalEnterCo(other.gameObject));
         }
     }
