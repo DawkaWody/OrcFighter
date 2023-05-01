@@ -10,6 +10,8 @@ public class Orc : MonoBehaviour
     private GameObject _player;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+
+    private bool _isAttacking;
     // Start is called before the first frame update
     void Start(){
         _player = GameObject.Find("Player");
@@ -22,6 +24,12 @@ public class Orc : MonoBehaviour
         Vector2 moveDirection = CalculateMovement();
         AdaptImage(moveDirection);
         transform.Translate(moveDirection * _speed * Time.deltaTime);
+        if (checkIfAttack()){
+            attack();
+        }
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Orc_walk")){
+            _isAttacking = false;
+        }
     }
 
     Vector2 CalculateMovement(){
@@ -49,5 +57,26 @@ public class Orc : MonoBehaviour
         else if (direction.x > 0){
             _spriteRenderer.flipX = false;
         }
+    }
+
+    bool checkIfAttack(){
+        Vector2 currentPos = new Vector2(transform.position.x, transform.position.y);
+        Vector2 playerPos = new Vector2(_player.transform.position.x, _player.transform.position.y);
+        Vector2 distance = playerPos - currentPos;
+        float distanceX = distance.x;
+        float distanceY = distance.y;
+        float generalDistance = distanceX + distanceY;
+        if (generalDistance <= 2 && generalDistance >= 0){
+            return true;
+        }
+        else if (generalDistance >= -2 && generalDistance <= 0){
+            return true;
+        }
+        return false;
+    }
+
+    void attack(){
+        _isAttacking = true;
+        _animator.SetTrigger("attacks");
     }
 }
