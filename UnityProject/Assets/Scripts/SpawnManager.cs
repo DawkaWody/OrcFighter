@@ -9,6 +9,9 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject topPoint, bottomPoint, leftPoint, rightPoint;
     [SerializeField]
+    private GameObject _enemyContainer;
+
+    [SerializeField]
     private float _spawnRate;
 
     private float maxX, maxY, minX, minY;
@@ -32,7 +35,8 @@ public class SpawnManager : MonoBehaviour
         while (spawn){
             yield return new WaitForSeconds(_spawnRate);
             int wave = GameManager.instance.wave;
-            Instantiate(_orcPrefab, transform.position + new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0), transform.rotation);
+            GameObject newOrc = Instantiate(_orcPrefab, transform.position + new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0), transform.rotation);
+            newOrc.transform.parent = _enemyContainer.transform;
         }
     }
 }
