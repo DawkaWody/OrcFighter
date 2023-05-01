@@ -50,4 +50,11 @@ public class Orc : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
     }
+
+    bool checkIfAttack(){
+        Vector2 currentPos = new Vector2(transform.position.x, transform.position.y);
+        Vector2 playerPos = new Vector2(_player.transform.position.x, player.transform.position.y);
+        Vector2 distance = currentPos - playerPos;
+        return false;
+    }
 }
