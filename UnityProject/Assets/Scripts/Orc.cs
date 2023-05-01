@@ -9,10 +9,12 @@ public class Orc : MonoBehaviour
 
     private GameObject _player;
     private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
     // Start is called before the first frame update
     void Start(){
         _player = GameObject.Find("Player");
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
