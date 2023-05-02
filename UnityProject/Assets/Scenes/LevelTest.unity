@@ -218,7 +218,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 12
-      m_TileSpriteIndex: 12
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -409,10 +409,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: -742890541, guid: 678a84402399342439b9cb789ff28afc, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -742890541, guid: 678a84402399342439b9cb789ff28afc, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 14
     m_Data:
@@ -612,7 +612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696283046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 19.5, z: 0}
+  m_LocalPosition: {x: 0, y: 59.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -887,7 +887,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012943117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38.9, y: 0, z: 0}
+  m_LocalPosition: {x: -27.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2783,6 +2783,7 @@ MonoBehaviour:
   rightPoint: {fileID: 2062039502}
   _enemyContainer: {fileID: 669262920}
   _spawnRate: 1
+  orcLimit: 2
 --- !u!1 &1179765844
 GameObject:
   m_ObjectHideFlags: 0
@@ -124884,63 +124885,6 @@ Transform:
   m_Father: {fileID: 1173263681}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1922180269
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8231888739494081532, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_Name
-      value: Orc
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
 --- !u!1 &2062039502
 GameObject:
   m_ObjectHideFlags: 0
