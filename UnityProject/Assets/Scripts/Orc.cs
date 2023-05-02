@@ -34,6 +34,7 @@ public class Orc : MonoBehaviour
 
     Vector2 CalculateMovement(){
         Vector2 toMove = _player.transform.position - transform.position;
+        Debug.Log(toMove);
         if (toMove.x < 0){
             toMove.x = -1;
         }
@@ -53,9 +54,11 @@ public class Orc : MonoBehaviour
     void AdaptImage(Vector2 direction){
         if (direction.x < 0 || _player.transform.position.x - transform.position.x < .2f){
             _spriteRenderer.flipX = true;
+            _animator.SetBool("turnedRight", false);
         }
         else if (direction.x > 0){
             _spriteRenderer.flipX = false;
+            _animator.SetBool("turnedRight", true);
         }
     }
 
