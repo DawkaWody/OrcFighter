@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Rigidbody2D _rigidbody;
+
     // Start is called before the first frame update
     void Start(){
         
