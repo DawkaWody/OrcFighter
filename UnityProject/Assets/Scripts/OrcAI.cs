@@ -103,9 +103,9 @@ public class OrcAI : MonoBehaviour
                 _spriteRenderer.flipX = true;
                 _animator.SetBool("turnedRight", false);
             }
+            
+            yield return new WaitForSeconds(.5f);
         }
-
-        yield return new WaitForSeconds(.5f);
     }
 
     void attack(){

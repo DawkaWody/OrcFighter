@@ -124737,7 +124737,7 @@ GameObject:
   - component: {fileID: 1996010549}
   - component: {fileID: 1996010548}
   m_Layer: 0
-  m_Name: A* PathFinding core
+  m_Name: A* PathFinding Graph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124852,9 +124852,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1996129001, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
+      propertyPath: _speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996129001, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 860942699}
+    - target: {fileID: 6979055320435822468, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8231888739494081532, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
       propertyPath: m_Name
       value: Orc
@@ -124902,6 +124910,10 @@ PrefabInstance:
     - target: {fileID: 8231888739494081534, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837008253564586788, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
