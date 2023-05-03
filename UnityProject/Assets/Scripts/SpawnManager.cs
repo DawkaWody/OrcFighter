@@ -43,25 +43,16 @@ public class SpawnManager : MonoBehaviour
             spawn = false;
         }
 
-        if (_timer == 30)
+        if (_timer >= 3)
         {
             spawn = true;
         }
 
         if (_spawnRate > 1)
         {
-            if (_timer > 30)
+            if (_timer > 12)
             {
-                _timer = 0;
                 _spawnRate -= 1;
-            }
-        }
-
-        else
-        {
-            if (_timer > 30)
-            {
-                _timer = 0;
             }
         }
 
