@@ -56,14 +56,18 @@ public class OrcAI : MonoBehaviour
                 _reachedEndOfPath = false;
             }
             direction = adjustVector((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position);
-            Debug.Log(direction);
             Vector2 force = direction * _speed * Time.deltaTime;
+            Debug.Log(force);
             transform.Translate(force);
 
             float distance = Vector2.Distance(_rigidbody.position, _path.vectorPath[_currentWaypoint]);
 
-            if (distance < _nextWayPointDistance){
+            if (distance < _nextWayPointDistance && _currentWaypoint + 1 < _path.vectorPath.Count){
                 _currentWaypoint ++;
+            }
+
+            if (checkIfAttack()){
+                attack();
             }
         }
     }
@@ -106,6 +110,13 @@ public class OrcAI : MonoBehaviour
             
             yield return new WaitForSeconds(.5f);
         }
+    }
+
+    bool checkIfAttack(){
+        if (_currentWaypoint == _path.vectorPath.Count - 1 && Vector3.Distance(transform.position, target.transform.position) < 2){
+            return true;
+        }
+        return false;
     }
 
     void attack(){

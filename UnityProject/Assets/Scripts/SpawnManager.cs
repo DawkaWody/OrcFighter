@@ -29,30 +29,26 @@ public class SpawnManager : MonoBehaviour
         minX = leftPoint.transform.position.x;
         maxY = topPoint.transform.position.y;
         minY = bottomPoint.transform.position.y;
-        StartCoroutine(OrcSpawnCo());
         spawn = false;
         _timer += Time.deltaTime;
+        StartCoroutine(OrcSpawnCo());
     }
 
     // Update is called once per frame
     void Update() {
-        if (orcCount >= orcLimit) 
-        {
+        if (orcCount >= orcLimit) {
             spawn = false;
         }
 
-        if (_timer == 30)
-        {
+        if (_timer == 30){
             spawn = true;
         }
 
-        if (_timer > 30)
-        {
+        if (_timer > 30){
             _timer = 0;
         }
 
-        if (orcCount == 0)
-        {
+        if (orcCount == 0){
             _timer += Time.deltaTime;
         }
     }
