@@ -22,6 +22,7 @@ public class SpawnManager : MonoBehaviour
     
     public int orcLimit;
     private int orcCount;
+    int wave = GameManager.instance.wave;
 
     // Start is called before the first frame update
     void Start(){
@@ -31,6 +32,7 @@ public class SpawnManager : MonoBehaviour
         minY = bottomPoint.transform.position.y;
         StartCoroutine(OrcSpawnCo());
         spawn = false;
+        wave = 0;
         _timer += Time.deltaTime;
     }
 
@@ -46,9 +48,21 @@ public class SpawnManager : MonoBehaviour
             spawn = true;
         }
 
-        if (_timer > 30)
+        if (_spawnRate > 1)
         {
-            _timer = 0;
+            if (_timer > 30)
+            {
+                _timer = 0;
+                _spawnRate -= 1;
+            }
+        }
+
+        else
+        {
+            if (_timer > 30)
+            {
+                _timer = 0;
+            }
         }
 
         if (orcCount == 0)
