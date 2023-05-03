@@ -41,14 +41,19 @@ public class SpawnManager : MonoBehaviour
             spawn = false;
         }
 
-        if (_timer >= 30)
+        if (_timer == 30)
         {
             spawn = true;
         }
 
+        if (_timer > 30)
+        {
+            _timer = 0;
+        }
+
         if (orcCount == 0)
         {
-            
+            _timer += Time.deltaTime;
         }
     }
 
