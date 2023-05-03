@@ -14,8 +14,11 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private float _spawnRate;
 
+    [SerializeField]
+    private float _timer;
+
     private float maxX, maxY, minX, minY;
-    private bool spawn = true;
+    private bool spawn;
     
     public int orcLimit;
     private int orcCount;
@@ -27,13 +30,25 @@ public class SpawnManager : MonoBehaviour
         maxY = topPoint.transform.position.y;
         minY = bottomPoint.transform.position.y;
         StartCoroutine(OrcSpawnCo());
+        spawn = false;
+        _timer += Time.deltaTime;
     }
 
     // Update is called once per frame
-    void Update(){
-        if (orcCount >= orcLimit){
+    void Update() {
+        if (orcCount >= orcLimit) 
+        {
             spawn = false;
-            Debug.Log("Stopped Spawning");
+        }
+
+        if (_timer >= 30)
+        {
+            spawn = true;
+        }
+
+        if (orcCount == 0)
+        {
+            
         }
     }
 
@@ -45,7 +60,6 @@ public class SpawnManager : MonoBehaviour
             }
             int wave = GameManager.instance.wave;
             GameObject newOrc = Instantiate(_orcPrefab, transform.position + new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0), transform.rotation);
-            Debug.Log("New orc spawned");
             newOrc.transform.parent = _enemyContainer.transform;
 
             orcCount += 1;
