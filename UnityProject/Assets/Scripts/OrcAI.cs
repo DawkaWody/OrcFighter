@@ -57,7 +57,6 @@ public class OrcAI : MonoBehaviour
             }
             direction = adjustVector((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position);
             Vector2 force = direction * _speed * Time.deltaTime;
-            Debug.Log(force);
             transform.Translate(force);
 
             float distance = Vector2.Distance(_rigidbody.position, _path.vectorPath[_currentWaypoint]);

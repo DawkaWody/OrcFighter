@@ -9,9 +9,11 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Rigidbody2D _rigidbody;
+
+    private UIController _uiController;
     // Start is called before the first frame update
     void Start(){
-        
+        _uiController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     // Update is called once per frame

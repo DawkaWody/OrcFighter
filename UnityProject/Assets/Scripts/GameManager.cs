@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
 
     public int coins;
+    public float playerHearts;
     public int wave;
     public int zombiesKilled;
 
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         wave = 1;
+        playerHearts = 3;
     }
 
     // Update is called once per frame
