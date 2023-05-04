@@ -27,4 +27,8 @@ public class Player : MonoBehaviour
             GameManager.instance.coins += 1;
         }
     }
+
+    public void knockback(){
+        transform.position = new Vector3(0, 0, 0);
+    }
 }

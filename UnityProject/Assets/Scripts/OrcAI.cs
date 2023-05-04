@@ -14,7 +14,6 @@ public class OrcAI : MonoBehaviour
 
     private Path _path;
     private int _currentWaypoint = 0;
-    private bool _reachedEndOfPath;
     private bool directionCheckingStarted;
 
     private Vector2 direction;
@@ -25,12 +24,18 @@ public class OrcAI : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+
+    private Player _player;
+    private UIController _uiController;
     // Start is called before the first frame update
     void Start(){
         _seeker = GetComponent<Seeker>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
+
+        _player = GameObject.Find("Player").GetComponent<Player>();
+        _uiController = GameObject.Find("Canvas").GetComponent<UIController>();
 
         InvokeRepeating("UpdatePath", 0f, .5f);   
     }
@@ -49,11 +54,7 @@ public class OrcAI : MonoBehaviour
                 directionCheckingStarted = true;
             }
             if (_currentWaypoint >= _path.vectorPath.Count){
-                _reachedEndOfPath = true;
                 return;
-            }
-            else{
-                _reachedEndOfPath = false;
             }
             direction = adjustVector((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position);
             Vector2 force = direction * _speed * Time.deltaTime;
@@ -66,8 +67,17 @@ public class OrcAI : MonoBehaviour
             }
 
             if (checkIfAttack()){
+                _isAttacking = checkIfAttack();
                 attack();
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (_isAttacking && other.CompareTag("Player")){
+            GameManager.instance.playerHearts -= .5f;
+            _uiController.updateHearts();
+            _player.knockback();
         }
     }
 
