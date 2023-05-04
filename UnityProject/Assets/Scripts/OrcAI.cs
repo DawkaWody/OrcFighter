@@ -5,8 +5,8 @@ using Pathfinding;
 
 public class OrcAI : MonoBehaviour
 {
-    [SerializeField]
     private Transform target;
+
     [SerializeField]
     private float _speed;
     [SerializeField]
@@ -29,6 +29,8 @@ public class OrcAI : MonoBehaviour
     private UIController _uiController;
     // Start is called before the first frame update
     void Start(){
+        target = GameObject.Find("Player").GetComponent<Transform>();
+
         _seeker = GetComponent<Seeker>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();

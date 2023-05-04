@@ -125115,10 +125115,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1996129001, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 860942699}
     - target: {fileID: 8231888739494081532, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
       propertyPath: m_Name
       value: Orc
