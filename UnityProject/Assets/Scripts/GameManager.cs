@@ -6,11 +6,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField]
+    private float damageCooldown = .5f;
 
     public int coins;
     public float playerHearts;
     public int wave;
     public int zombiesKilled;
+
+    private bool canDamage = true;
 
     private void Awake() {
         if (instance != null){
@@ -30,5 +34,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update(){
         
+    }
+
+    public void DamagePlayer(float strength){
+        if (canDamage){
+            playerHearts -= strength;
+            canDamage = false;
+            StartCoroutine(DamageCooldownCo());
+        }
+    }
+
+    IEnumerator DamageCooldownCo(){
+        yield return new WaitForSeconds(damageCooldown);
+        canDamage = true;
     }
 }

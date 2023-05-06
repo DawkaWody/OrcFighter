@@ -52,13 +52,13 @@ public class OrcAI : MonoBehaviour
     void FixedUpdate(){
         if (_path != null){
             if (!directionCheckingStarted){
-                StartCoroutine(adjustImage());
+                StartCoroutine(AdjustImageCo());
                 directionCheckingStarted = true;
             }
             if (_currentWaypoint >= _path.vectorPath.Count){
                 return;
             }
-            direction = adjustVector((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position);
+            direction = AdjustVector((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position);
             Vector2 force = direction * _speed * Time.deltaTime;
             transform.Translate(force);
 
@@ -77,9 +77,9 @@ public class OrcAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (_isAttacking && other.CompareTag("Player")){
-            GameManager.instance.playerHearts -= .5f;
+            GameManager.instance.DamagePlayer(.5f);
+            _player.knockback(transform.position);
             _uiController.updateHearts();
-            _player.knockback();
         }
     }
 
@@ -90,7 +90,7 @@ public class OrcAI : MonoBehaviour
         }
     }
 
-    Vector2 adjustVector(Vector2 toMove){
+    Vector2 AdjustVector(Vector2 toMove){
         if (toMove.x < 0){
             toMove.x = -1;
         }
@@ -107,7 +107,7 @@ public class OrcAI : MonoBehaviour
         return toMove;
     }
 
-    IEnumerator adjustImage(){
+    IEnumerator AdjustImageCo(){
         while (true){
             // Sprawdzenie kierunku
             if (direction.x > 0){

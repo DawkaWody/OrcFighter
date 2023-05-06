@@ -1073,6 +1073,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _rigidbody: {fileID: 860942701}
+  _spriteRenderer: {fileID: 860942698}
+  strength: 6
+  knockbackDelay: 0.15
+  stunnedDelay: 0.05
 --- !u!50 &860942701
 Rigidbody2D:
   serializedVersion: 4
@@ -1198,6 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7e1ca970bb8fc43963ce62a20311d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageCooldown: 0.5
   coins: 0
   playerHearts: 0
   wave: 0
