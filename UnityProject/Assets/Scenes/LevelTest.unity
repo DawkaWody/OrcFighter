@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 156578304}
   m_Layer: 6
   m_Name: TilemapObjects
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIezL33vuewIAADgFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMFy2jAQ/RVG58LYJhjorXUI6SEJE9LJxRdhrbEGWfJIcoBk+PeuZBu7dMoF+e3u0763a38RLk0FmVV6rTl7UgzI9xFxZ/Jt1Acf4UT3Sm75J3Q575zZwiVRn/NKLVeIh67MqBKs5tkPuRcuOUCwljxXulyxPSTKWINwToUBDGllXbVE6GtETvg3XrqSM56iuTt94mkZjC54zEBa0H1qNFm6Xxwu24q72eQOgUVbtpiE0ziIlqtxEHuCWmaClhUwp6bnWcZtfTgPPOVi5tMl6m0znbZMCcFN2yyx58qbkdDK1CgVExinKN53GE5mCBTA94V1nQ7LX/LcgG290fR8zzW62PCSn6qxtqTm0HT4QUXtbopmjYiG9Omf+Dj04Vyr8rG7NwzcHbbg2eGVnjNq7MD7IXw/aN0bdaTiQHcC3guQz2qtVS0ZBq2uXWltILrvH6/SkgKyQ483rd6AddU73426G7TTcPHqT4ng5c6FJncNsBXKO+73AzTO5hc27LfHtBSIui5+G3ij++GatYEHro3FUKtSuvZ2qtYulay8Z05NbROlJeghQwWSCnveII+9neFN7P9VD9S9Ue3tbax7UW5KPNznB8FNaKOO12mZQh2fwBQvtRVcQm+1CzyjUYmSslmxoaSubFvrnGaDsn3N2d+7RRa7eUDjHWPBLIpiysZxlAc5m89DCOPpYhoSv3xcok4qNk2jrT04NtmTS1y07kMzWmta+XVnmh7X/LNUps/kMlfbTAPIl4bh2jhovARfTLZiHA3agrVc+oGTr5QIlR2ApVei1Ctdnaymac+Skop/KOuQlCT+y5ISB1+XeaPhg8PRXd6RXcjlD1BLAwQUAAAICAAACCHs2AGnmm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0kkWSuUGiWVJKioGpkZFZYoqumVGaQVqKublhqqGZsYWxoVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsy9977nsCAAA4BQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHs2AGnmm0AAAB4AAAACQAkAAAAAAAAAAAAAADIAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAIADAAAAAA==
+    dataString: UEsDBBQAAAgIAAAIIexshC3qegIAADYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMFy2jAQ/RVG58LYTjDQW+sQ0kMSprSTiy/CWmMNsuSR5ADJ8O9dyTKmdMoF+e3u0763a38SLk0DhVV6pTl7VgzI1xFxZ/JlNASf4Eh3Sm74B/Q5b5zZyiVRn/OTWq4Qj12ZUTVYzYtvcidccoRgK3mpdL1kO8iUsQbhkgoDGNLKumqJ0OeIHPFvvHAlJzwlM3f6wNMiGp3xWIC0oIfUZLJwvzRehIr76eQegXkom0/iuzRKFstxlHqCVhaC1g0wp2bgWaShPp5FnnI+9ekS9YZMp61QQnATmiX21HgzMtqYFqViAuMUxfsOE3ysgO8qGx4uxa9lacAGZzQ9PXCNHnas5LvqjK2p2Xf9vVPRunuSaSehI33+Jz6OfbjUqn7q740jd4eteLH/SU8FNfbK+Wv4YWg89jYdqNjTrYC3CuSLWmnVSoZBq1tX2hpIHobHi7SsgmI/4F2rN2DbDL73g+7H7DScvfpjJni9daHJfQdshPJ+++0AjZP5gQ373TGBAlHXxW8Dv+jueslC4JFrYzEUVErX3la12qWSpffMqWltprQEfc3QgKTCntbIY29neBP7f9Ujde9TuD3E+tfkpsTDQ34U3YTW6nCZlqnU4RlM9dpawSUMVrvACxqVKSm7FbuW1JdtWl3S4qps13L2926R+XYW0XTLWDRNkpSycZqUUclmsxji9G5+FxO/fFyiTirWXaPBHhybHMglLlr/mRmtNG38ujNNDyv+USszZHJZqk2hAeRrx3BpHDRegq8lWzKOBm3AWi79wMlnToQq9sDyC1HulS6PVtN8YMlJw9+VdUhOMv9dyYmDL8u81vDO4eAu78nO5PwHUEsDBBQAAAgIAAAIIezYAaeabQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSRZK5QaJZUkqKgamRkVliiq6ZUZpBWoq5uWGqoZmxhbGhUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIexshC3qegIAADYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIezYAaeabQAAAHgAAAAJACQAAAAAAAAAAAAAAMcCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAfwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1266,7 +1266,7 @@ GameObject:
   - component: {fileID: 1059034308}
   m_Layer: 6
   m_Name: TilemapTrees
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3015,6 +3015,123 @@ Transform:
   m_Father: {fileID: 1747532569}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1290172857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8231888739494081532, guid: fb071c197274a6e49bbb40da8b86d362, type: 3}
+  m_PrefabInstance: {fileID: 3778031434604583223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1290172865
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290172857}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6282062628527187740, guid: c32810ed9400edf49a3d6c8cb6922f36, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 868aa8d7a146c1f42985e45c2e546d87, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1290172866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290172857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8d580905cd0194a8eb82fc7f446cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 868aa8d7a146c1f42985e45c2e546d87, type: 3}
+  - {fileID: 8300000, guid: 94143f9e21296fd4a9fd0f4afb148514, type: 3}
+  soundPlayCooldownTime: 0.5
 --- !u!1 &1334349613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,7 +3148,7 @@ GameObject:
   - component: {fileID: 1334349618}
   m_Layer: 8
   m_Name: TilemapBarriers
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3804,9 +3921,10 @@ GameObject:
   - component: {fileID: 1342402513}
   - component: {fileID: 1342402515}
   - component: {fileID: 1342402514}
+  - component: {fileID: 1342402516}
   m_Layer: 6
   m_Name: TilemapGround
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116339,6 +116457,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1342402516
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342402512}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
 --- !u!1 &1417373354
 GameObject:
   m_ObjectHideFlags: 0
@@ -116355,7 +116489,7 @@ GameObject:
   - component: {fileID: 1417373359}
   m_Layer: 8
   m_Name: TilemapWater
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

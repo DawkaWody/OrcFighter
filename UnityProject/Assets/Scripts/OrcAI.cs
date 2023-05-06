@@ -14,16 +14,17 @@ public class OrcAI : MonoBehaviour
 
     private Path _path;
     private int _currentWaypoint = 0;
-    private bool directionCheckingStarted;
 
     private Vector2 direction;
 
     private bool _isAttacking;
+    private bool _missSoundPlayed;
 
     private Seeker _seeker;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+    private AudioHandler _audioHandler;
 
     private Player _player;
     private UIController _uiController;
@@ -35,11 +36,13 @@ public class OrcAI : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
+        _audioHandler = GetComponent<AudioHandler>();
 
         _player = GameObject.Find("Player").GetComponent<Player>();
         _uiController = GameObject.Find("Canvas").GetComponent<UIController>();
 
-        InvokeRepeating("UpdatePath", 0f, .5f);   
+        InvokeRepeating("UpdatePath", 0f, .5f);
+        InvokeRepeating("AdjustImage", 0f, .5f);
     }
 
     private void UpdatePath(){
@@ -51,10 +54,6 @@ public class OrcAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate(){
         if (_path != null){
-            if (!directionCheckingStarted){
-                StartCoroutine(AdjustImageCo());
-                directionCheckingStarted = true;
-            }
             if (_currentWaypoint >= _path.vectorPath.Count){
                 return;
             }
@@ -69,8 +68,19 @@ public class OrcAI : MonoBehaviour
             }
 
             if (checkIfAttack()){
-                _isAttacking = checkIfAttack();
                 attack();
+            }
+            else{
+                _isAttacking = false;
+            }
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Orc_attack_right") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Orc_attack_left")){
+                if (!_isAttacking && !_missSoundPlayed){
+                    _audioHandler.PlaySound(1);
+                    _missSoundPlayed = true;
+                }
+            }
+            else{
+                _missSoundPlayed = false;
             }
         }
     }
@@ -80,6 +90,7 @@ public class OrcAI : MonoBehaviour
             GameManager.instance.DamagePlayer(.5f);
             _player.knockback(transform.position);
             _uiController.updateHearts();
+            _audioHandler.PlaySound(0);
         }
     }
 
@@ -107,19 +118,15 @@ public class OrcAI : MonoBehaviour
         return toMove;
     }
 
-    IEnumerator AdjustImageCo(){
-        while (true){
-            // Sprawdzenie kierunku
-            if (direction.x > 0){
-                _spriteRenderer.flipX = false;
-                _animator.SetBool("turnedRight", true);
-            }
-            else if (direction.x < 0){
-                _spriteRenderer.flipX = true;
-                _animator.SetBool("turnedRight", false);
-            }
-            
-            yield return new WaitForSeconds(.5f);
+    void AdjustImage(){
+        // Sprawdzenie kierunku
+        if (direction.x > 0){
+            _spriteRenderer.flipX = false;
+            _animator.SetBool("turnedRight", true);
+        }
+        else if (direction.x < 0){
+            _spriteRenderer.flipX = true;
+            _animator.SetBool("turnedRight", false);
         }
     }
 
