@@ -18,7 +18,6 @@ public class OrcAI : MonoBehaviour
     private Vector2 direction;
 
     private bool _isAttacking;
-    private bool _missSoundPlayed;
 
     private Seeker _seeker;
     private Rigidbody2D _rigidbody;
@@ -72,15 +71,6 @@ public class OrcAI : MonoBehaviour
             }
             else{
                 _isAttacking = false;
-            }
-            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Orc_attack_right") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Orc_attack_left")){
-                if (!_isAttacking && !_missSoundPlayed){
-                    _audioHandler.PlaySound(1);
-                    _missSoundPlayed = true;
-                }
-            }
-            else{
-                _missSoundPlayed = false;
             }
         }
     }

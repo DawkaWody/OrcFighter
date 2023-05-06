@@ -301,5 +301,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clips:
   - {fileID: 8300000, guid: 868aa8d7a146c1f42985e45c2e546d87, type: 3}
-  - {fileID: 8300000, guid: 94143f9e21296fd4a9fd0f4afb148514, type: 3}
-  soundPlayCooldownTime: 0.5
+  soundPlayCooldownTime: 0.1
