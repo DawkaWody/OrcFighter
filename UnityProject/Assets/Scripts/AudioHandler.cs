@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class AudioHandler : MonoBehaviour
 {
-    [SerializeField]
-    private AudioClip[] _clips;
-    [SerializeField]
-    private float soundPlayCooldownTime;
+    public AudioClip[] _clips;
+
+    public float soundPlayCooldownTime;
 
     private AudioSource _audioSource;
     private float soundPlayCooldown;

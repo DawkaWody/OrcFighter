@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1996129001}
   - component: {fileID: 1290172865}
   - component: {fileID: 1290172866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Orc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,4 +301,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clips:
   - {fileID: 8300000, guid: 868aa8d7a146c1f42985e45c2e546d87, type: 3}
+  - {fileID: 8300000, guid: d3396154c799a7742be3a2587bb7b1dc, type: 3}
   soundPlayCooldownTime: 0.1
