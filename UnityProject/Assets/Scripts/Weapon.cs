@@ -11,7 +11,8 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private LayerMask _enemyLayer;
     
-    private float attackRate = 2f;
+    private float _attackRate = 2f;
+    private float _nextAttackTime;
 
     private AudioHandler _audioHandler;
     private Animator _animator;
@@ -20,13 +21,16 @@ public class Weapon : MonoBehaviour
         _audioHandler = GetComponent<AudioHandler>();
         _animator = GetComponent<Animator>();
 
-        _audioHandler.soundPlayCooldownTime = attackRate - .05f;
+        _audioHandler.soundPlayCooldownTime = 1f / _attackRate - .5f;
     }
 
     // Update is called once per frame
     void Update(){
-        if (Input.GetKeyDown(KeyCode.Space)){
-            Attack();
+        if (Time.time >= _nextAttackTime){
+            if (Input.GetKeyDown(KeyCode.Space)){
+                Attack();
+                _nextAttackTime = Time.time + 1f / _attackRate;
+            }
         }
     }
 
@@ -38,7 +42,7 @@ public class Weapon : MonoBehaviour
         if (enemiesHit != null && enemiesHit.Length != 0){
             _audioHandler.PlaySound(0);
             foreach (Collider2D enemy in enemiesHit){
-                AudioSource.PlayClipAtPoint(enemy.GetComponent<AudioHandler>()._clips[1], enemy.transform.position, 5);
+                AudioSource.PlayClipAtPoint(enemy.GetComponent<AudioHandler>()._clips[1], enemy.transform.position);
                 Destroy(enemy.gameObject);
             }
         }
