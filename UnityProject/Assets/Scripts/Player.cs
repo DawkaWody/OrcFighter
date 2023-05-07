@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     [SerializeField]
     private float strength = 6, knockbackDelay = .15f, stunnedDelay = .05f;
+
+    [SerializeField]
+    private GameObject _weapon;
     
     private bool takeInput = true;
 
@@ -26,6 +29,23 @@ public class Player : MonoBehaviour
     void Update(){
         if (takeInput){
             _rigidbody.velocity = new Vector2(_speed * Input.GetAxis("Horizontal"), _speed * Input.GetAxis("Vertical"));
+
+            if (_rigidbody.velocity.x < 0){
+                _spriteRenderer.flipX = false;
+                if (_weapon != null){
+                    _weapon.GetComponent<SpriteRenderer>().flipX = false;
+                    _weapon.transform.position = new Vector3(-0.5f, .8f, 0f);
+                    _weapon.transform.Rotate(new Vector3(0f, 0f, -22.5f));
+                }
+            }
+            else {
+                _spriteRenderer.flipX = true;
+                if (_weapon != null){
+                    _weapon.GetComponent<SpriteRenderer>().flipX = true;
+                    _weapon.transform.position = new Vector3(0.5f, .8f, 0f);
+                    _weapon.transform.Rotate(new Vector3(0f, 0f, 22.5f));
+                }
+            }
         }
     }
 

@@ -23,6 +23,8 @@ public class OrcAI : MonoBehaviour
 
     private Vector2 direction;
 
+    private bool playerWasHit = false;
+
     private Seeker _seeker;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
@@ -71,8 +73,11 @@ public class OrcAI : MonoBehaviour
             }
 
             if (checkIfAttack()){
-                attack();
+                _animator.SetTrigger("attacks");
+                playerWasHit = false;
             }
+
+            checkForHitOrMiss();
         }
     }
 
@@ -123,9 +128,7 @@ public class OrcAI : MonoBehaviour
         return false;
     }
 
-    void attack(){
-        _animator.SetTrigger("attacks");
-        bool playerWasHit = false;
+    void checkForHitOrMiss(){
         Collider2D[] playerHit = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _playerLayer);
         if (playerHit != null && playerHit.Length != 0){
             if (!playerWasHit){
@@ -137,10 +140,10 @@ public class OrcAI : MonoBehaviour
                 }
                 playerWasHit = true;
             }
-            else{
-                _audioHandler.PlaySound(1);
-                playerWasHit = false;
-            }
+        }
+        else if (playerWasHit){
+            _audioHandler.PlaySound(1);
+            playerWasHit = false;
         }
     }
 }
