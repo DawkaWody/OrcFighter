@@ -42,7 +42,7 @@ public class Weapon : MonoBehaviour
         if (enemiesHit != null && enemiesHit.Length != 0){
             _audioHandler.PlaySound(0);
             foreach (Collider2D enemy in enemiesHit){
-                AudioSource.PlayClipAtPoint(enemy.GetComponent<AudioHandler>()._clips[1], enemy.transform.position);
+                AudioSource.PlayClipAtPoint(enemy.GetComponent<AudioHandler>()._clips[2], enemy.transform.position);
                 Destroy(enemy.gameObject);
             }
         }

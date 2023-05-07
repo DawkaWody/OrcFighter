@@ -11,13 +11,17 @@ public class OrcAI : MonoBehaviour
     private float _speed;
     [SerializeField]
     private float _nextWayPointDistance;
+    [SerializeField]
+    private Transform _attackPoint;
+    [SerializeField]
+    private float _attackRange;
+    [SerializeField]
+    private LayerMask _playerLayer;
 
     private Path _path;
     private int _currentWaypoint = 0;
 
     private Vector2 direction;
-
-    private bool _isAttacking;
 
     private Seeker _seeker;
     private Rigidbody2D _rigidbody;
@@ -69,19 +73,11 @@ public class OrcAI : MonoBehaviour
             if (checkIfAttack()){
                 attack();
             }
-            else{
-                _isAttacking = false;
-            }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (_isAttacking && other.CompareTag("Player")){
-            GameManager.instance.DamagePlayer(.5f);
-            _player.knockback(transform.position);
-            _uiController.updateHearts();
-            _audioHandler.PlaySound(0);
-        }
+    private void OnDrawGizmosSelected() {
+        Gizmos.DrawWireSphere(_attackPoint.position, _attackRange);
     }
 
     private void OnPathCreated(Path path){
@@ -128,7 +124,23 @@ public class OrcAI : MonoBehaviour
     }
 
     void attack(){
-        _isAttacking = true;
         _animator.SetTrigger("attacks");
+        bool playerWasHit = false;
+        Collider2D[] playerHit = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _playerLayer);
+        if (playerHit != null && playerHit.Length != 0){
+            if (!playerWasHit){
+                _audioHandler.PlaySound(0);
+                foreach (Collider2D player in playerHit){
+                    GameManager.instance.DamagePlayer(.5f);
+                    _uiController.updateHearts();
+                    player.GetComponent<Player>().knockback(transform.position);
+                }
+                playerWasHit = true;
+            }
+            else{
+                _audioHandler.PlaySound(1);
+                playerWasHit = false;
+            }
+        }
     }
 }
