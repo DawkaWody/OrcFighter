@@ -34,16 +34,16 @@ public class Player : MonoBehaviour
                 _spriteRenderer.flipX = false;
                 if (_weapon != null){
                     _weapon.GetComponent<SpriteRenderer>().flipX = false;
-                    _weapon.transform.position = new Vector3(-0.5f, .8f, 0f);
-                    _weapon.transform.Rotate(new Vector3(0f, 0f, -22.5f));
+                    _weapon.GetComponent<Animator>().SetBool("turnedLeft", true);
+                    _weapon.transform.localPosition = new Vector3(-0.5f, .8f, _weapon.transform.position.z);
                 }
             }
             else {
                 _spriteRenderer.flipX = true;
                 if (_weapon != null){
                     _weapon.GetComponent<SpriteRenderer>().flipX = true;
-                    _weapon.transform.position = new Vector3(0.5f, .8f, 0f);
-                    _weapon.transform.Rotate(new Vector3(0f, 0f, 22.5f));
+                    _weapon.GetComponent<Animator>().SetBool("turnedLeft", false);
+                    _weapon.transform.localPosition = new Vector3(0.5f, .8f, _weapon.transform.position.z);
                 }
             }
         }
